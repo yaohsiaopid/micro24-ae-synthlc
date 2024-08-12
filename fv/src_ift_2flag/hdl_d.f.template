@@ -1,0 +1,24 @@
++define+ABV_ON
++define+WT_DCACHE
++define+FVT
++define+CVA6_REPO_DIR=.
++define+BLK_T_T_ARCH
++incdir+DESIGNDIR/core
++incdir+DESIGNDIR/common/submodules/common_cells/include/
++incdir+DESIGNDIR/common/submodules/common_cells/src/
++incdir+DESIGNDIR/common/local/util/
++incdir+DESIGNDIR/core/include/
+-y DESIGNDIR/core/include/
+DESIGNDIR/core/include/cv64a6_imafdc_sv39_config_pkg.sv
+DESIGNDIR/core/include/riscv_pkg.sv
+DESIGNDIR/corev_apu/riscv-dbg/src/dm_pkg.sv
+DESIGNDIR/core/include/ariane_pkg.sv
+DESIGNDIR/corev_apu/axi/src/axi_pkg.sv
+DESIGNDIR/corev_apu/fpga-support/rtl/SyncSpRamBeNx64.sv
+DESIGNDIR/core/include/ariane_rvfi_pkg.sv
+DESIGNDIR/core/include/ariane_axi_pkg.sv
+DESIGNDIR/core/include/wt_cache_pkg.sv
+DESIGNDIR/core/include/std_cache_pkg.sv
+DESIGNDIR/core/include/axi_intf.sv
+./src_ift_2flag/13_ord_sram_2flags.sv
+./src_ift_2flag/cellift_hier_rewrite_2flags_d.sv

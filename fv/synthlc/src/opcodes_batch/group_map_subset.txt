@@ -1,0 +1,5 @@
+1|rs1rs2|DIV
+2|rs1rs2|ADD
+3|rs1|LW
+4|rs1rs2|SW
+5|rs1rs2|BEQ

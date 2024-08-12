@@ -1,0 +1,9 @@
+*.test
+**/__pycache__
+**/*_rundir/
+**/*_out/
+**/out/
+**/*.db
+**/depr/
+**/i_*_v2_11_*
+

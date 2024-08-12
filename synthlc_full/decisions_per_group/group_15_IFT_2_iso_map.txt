@@ -1,0 +1,16 @@
+0|id_stage_s1|id_stage_s1
+1|id_stage_s1|
+2|id_stage_s1|iso_4,issue_s1
+3|issue_s1|
+4|issue_s1|iso_1
+5|issue_s1|iso_2
+6|issue_s1|iso_3
+7|iso_1|iso_1
+8|iso_1|
+9|iso_1|iso_2
+10|iso_3|iso_3
+11|iso_3|
+12|iso_4|
+13|iso_4|iso_1
+14|iso_4|iso_2
+15|iso_4|iso_3

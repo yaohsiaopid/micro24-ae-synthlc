@@ -1,0 +1,11 @@
+2|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s32;
+3|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s32;
+5|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s32;
+8|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s32;
+9|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_3;iso_4;issue_s1;
+6|csr_buffer_s1;id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s2;
+17|csr_buffer_s1;id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;issue_s2;
+11|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;iso_4;issue_s8;serdiv_unit_divide_s1;serdiv_unit_divide_s1;serdiv_unit_divide_s2;
+12|id_stage_s1;id_stage_s1;iso_1;iso_1;iso_4;iso_4;issue_s8;mult_s1;
+18|id_stage_s1;id_stage_s1;iso_0;iso_0;iso_1;iso_1;iso_4;iso_4;issue_s16;load_unit_buff_s1;load_unit_op_s1;load_unit_op_s2;load_unit_op_s3;load_unit_op_s3;mem_req_s1;
+7|id_stage_s1;id_stage_s1;iso_0;iso_1;iso_1;iso_2;iso_4;iso_4;iso_5;iso_6;iso_6;issue_s16;store_unit_s1;

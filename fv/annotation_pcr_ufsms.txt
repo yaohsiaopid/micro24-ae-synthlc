@@ -1,0 +1,103 @@
+# (name, iir, tracking_logics_sig1|commit_cond, tracking_logic_sig2|commit_cond, ...) separated by empty lines
+# tracking_logic_sig is hierarchical signal name without any operators 
+# while commit_cond is an expression and treated as either 1'b0 or 1'b1
+# we enumerate cross-prodct of tracking_logics_sig and commit_cond to derive all
+# possible performing locations for a tuple of (iir, tracking_logics) 
+
+serdiv_unit_divide
+ex_stage_i.i_mult.i_div.pc_q
+ex_stage_i.i_mult.i_div.state_q
+
+id_stage
+id_stage_i.issue_q.sbe.pc
+id_stage_i.issue_q.valid
+
+issue
+issue_stage_i.i_issue_read_operands.pc_o
+issue_stage_i.i_issue_read_operands.alu_valid_q
+issue_stage_i.i_issue_read_operands.lsu_valid_q
+issue_stage_i.i_issue_read_operands.mult_valid_q
+issue_stage_i.i_issue_read_operands.fpu_valid_q
+issue_stage_i.i_issue_read_operands.csr_valid_q
+issue_stage_i.i_issue_read_operands.branch_valid_q
+
+lsq_enq_0
+ex_stage_i.lsu_i.lsu_bypass_i.mem_q[0].pc
+ex_stage_i.lsu_i.lsu_bypass_i.mem_q[0].valid
+
+lsq_enq_1
+ex_stage_i.lsu_i.lsu_bypass_i.mem_q[1].pc
+ex_stage_i.lsu_i.lsu_bypass_i.mem_q[1].valid
+
+scb_0
+issue_stage_i.i_scoreboard.mem_q[0].sbe.pc
+issue_stage_i.i_scoreboard.mem_q[0].issued
+issue_stage_i.i_scoreboard.mem_q[0].sbe.valid
+issue_stage_i.i_scoreboard.mem_q[0].sbe.ex.valid
+((issue_stage_i.i_scoreboard.mem_n[0].issued == 1'b0) && ((issue_stage_i.i_scoreboard.commit_ack_i[1] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[1] == 2'd0) || (issue_stage_i.i_scoreboard.commit_ack_i[0] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[0] == 2'd0))) ,issue_stage_i.i_scoreboard.mem_n[0].issued,issue_stage_i.i_scoreboard.commit_ack_i[1],issue_stage_i.i_scoreboard.commit_pointer_q[1],issue_stage_i.i_scoreboard.commit_ack_i[0],issue_stage_i.i_scoreboard.commit_pointer_q[0]
+
+scb_1
+issue_stage_i.i_scoreboard.mem_q[1].sbe.pc
+issue_stage_i.i_scoreboard.mem_q[1].issued
+issue_stage_i.i_scoreboard.mem_q[1].sbe.valid
+issue_stage_i.i_scoreboard.mem_q[1].sbe.ex.valid
+((issue_stage_i.i_scoreboard.mem_n[1].issued == 1'b0) && ((issue_stage_i.i_scoreboard.commit_ack_i[1] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[1] == 2'd1) || (issue_stage_i.i_scoreboard.commit_ack_i[0] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[0] == 2'd1))) ,issue_stage_i.i_scoreboard.mem_n[1].issued,issue_stage_i.i_scoreboard.commit_ack_i[1],issue_stage_i.i_scoreboard.commit_pointer_q[1],issue_stage_i.i_scoreboard.commit_ack_i[0],issue_stage_i.i_scoreboard.commit_pointer_q[0]
+
+scb_2
+issue_stage_i.i_scoreboard.mem_q[2].sbe.pc
+issue_stage_i.i_scoreboard.mem_q[2].issued
+issue_stage_i.i_scoreboard.mem_q[2].sbe.valid
+issue_stage_i.i_scoreboard.mem_q[2].sbe.ex.valid
+((issue_stage_i.i_scoreboard.mem_n[2].issued == 1'b0) && ((issue_stage_i.i_scoreboard.commit_ack_i[1] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[1] == 2'd2) || (issue_stage_i.i_scoreboard.commit_ack_i[0] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[0] == 2'd2))) ,issue_stage_i.i_scoreboard.mem_n[2].issued,issue_stage_i.i_scoreboard.commit_ack_i[1],issue_stage_i.i_scoreboard.commit_pointer_q[1],issue_stage_i.i_scoreboard.commit_ack_i[0],issue_stage_i.i_scoreboard.commit_pointer_q[0]
+
+scb_3
+issue_stage_i.i_scoreboard.mem_q[3].sbe.pc
+issue_stage_i.i_scoreboard.mem_q[3].issued
+issue_stage_i.i_scoreboard.mem_q[3].sbe.valid
+issue_stage_i.i_scoreboard.mem_q[3].sbe.ex.valid
+((issue_stage_i.i_scoreboard.mem_n[3].issued == 1'b0) && ((issue_stage_i.i_scoreboard.commit_ack_i[1] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[1] == 2'd3) || (issue_stage_i.i_scoreboard.commit_ack_i[0] == 1'b1 && issue_stage_i.i_scoreboard.commit_pointer_q[0] == 2'd3))) ,issue_stage_i.i_scoreboard.mem_n[3].issued,issue_stage_i.i_scoreboard.commit_ack_i[1],issue_stage_i.i_scoreboard.commit_pointer_q[1],issue_stage_i.i_scoreboard.commit_ack_i[0],issue_stage_i.i_scoreboard.commit_pointer_q[0]
+
+stb_com_0
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.commit_queue_q[0].pc
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.commit_queue_q[0].valid
+
+stb_com_1
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.commit_queue_q[1].pc
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.commit_queue_q[1].valid
+
+stb_spec_0
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.speculative_queue_q[0].pc
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.speculative_queue_q[0].valid
+
+stb_spec_1
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.speculative_queue_q[1].pc
+ex_stage_i.lsu_i.i_store_unit.store_buffer_i.speculative_queue_q[1].valid
+
+load_unit
+ex_stage_i.lsu_i.i_load_unit.load_data_q.ld_pc
+ex_stage_i.lsu_i.i_load_unit.valid_o
+
+store_unit
+ex_stage_i.lsu_i.i_store_unit.st_pc_q
+ex_stage_i.lsu_i.i_store_unit.state_q
+
+load_unit_buff
+ex_stage_i.lsu_i.load_pc_o
+ex_stage_i.lsu_i.load_valid_o
+
+csr_buffer
+ex_stage_i.csr_buffer_i.csr_reg_q.pc
+ex_stage_i.csr_buffer_i.csr_reg_q.valid
+
+mult
+ex_stage_i.i_mult.i_multiplier.pc_q
+ex_stage_i.i_mult.i_multiplier.mult_valid_q
+
+load_unit_op
+ex_stage_i.lsu_i.i_load_unit.lsu_ctrl_i.pc
+ex_stage_i.lsu_i.i_load_unit.valid_i,1
+ex_stage_i.lsu_i.i_load_unit.state_q
+
+mem_req
+ex_stage_i.lsu_i.i_ord_sram.pc_i
+ex_stage_i.lsu_i.i_ord_sram.req_i
