@@ -14,7 +14,7 @@ Depending on the number of decisions the leakage signatures control, the script 
 
 First please go to the working directory `$ cd $REPO/synthlc_full`. 
 
-## `DIV*, REM*` group:  
+## `DIV*, REM*` group/megacolumn:  
 Now let us first deploy SynthLC with `DIV*:DIV, DIVU, DIVUW, DIVW` and `REM*: REM, REMU, REMUW, REMW` as our IUVs:   
 `$ python3 src/run_per_decisions_col.py --i=DIV --num=4` 
 
@@ -41,18 +41,21 @@ The rest invokes `dyn_step2_proc` and `dyn_step3_proc`, which are similar in the
 In this end, we will determine for each instruction in the candidate transmitter group can influence the leakage signature associated with the decision source for each IUV in the transponder group. 
 
 
-## `Int. Insts` group: 
+## `Int. Insts` group/megacolumn: 
 Let us deploy SynthLC with `Int. Insts` (Fig. 7 above) as our IUVs:  
-`$ python3 src/run_per_decisions_col.py --i=ADD --num=2`
+`$ python3 src/run_per_decisions_col.py --i=ADD --num=2`   
+This command can take around 20 hours when `N = 3`.
 
 **Expected output**:
 This command will produce the leftmost two columns for `Int. Insts` megacolumn in the Fig. 7 (or the first blue highlighted box from the left) with a figure at `./table_6_ADD.png` upon finish. It will look like figure below: 
 <img src="./synthlc_full/figs/table_6_ADD.png" alt="drawing" width="300"/> 
 
-## `Load: LB, LD, LH, LW, L[BHW]U` group: 
-Let us deploy SynthLC with ``Load: LB, LD, LH, LW, L[BHW]U` (Fig. 7 above) as our IUVs:  
-`python3 src/run_per_decisions_col.py --i=Load --num=2`
+## `Load: LB, LD, LH, LW, L[BHW]U` group/megacolumn: 
+Let us deploy SynthLC with `Load: LB, LD, LH, LW, L[BHW]U` (Fig. 7 above) as our IUVs:   
+`$ python3 src/run_per_decisions_col.py --i=Load --num=2` 
+
+This command can take around 40 hours when `N = 3`.
 
 **Expected output**:
-This command will produce the leftmost two columns for `Int. Insts` megacolumn in the Fig. 7 (or the first blue highlighted box from the left) with a figure at `./table_6_ADD.png` upon finish. It will look like figure below: 
+This command will produce the leftmost two columns for `Int. Insts` megacolumn in the Fig. 7 (or the first blue highlighted box from the left) with a figure at `./table_6_Load.png` upon finish. It will look like figure below: 
 <img src="./synthlc_full/figs/table_6_Load.png" alt="drawing" width="300"/> 
