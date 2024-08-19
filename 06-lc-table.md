@@ -12,7 +12,17 @@ One can stop the process early to observe a partial version of Fig. 7. This expe
 Below we provide instruction to reproduce Fig. 7 one transponder group (megacolumn) at a time. 
 Depending on the number of decisions the leakage signatures control, the script invoked below incrementally produce results at a rate of about one leakage signatures every 10 x 3/N $\sim$ 40x 3/N hours when machine is configured to run `N` jobs in parallel (ref: [setup.md](./01-setup.md)).   
 
-First please go to the working directory `$ cd $REPO/synthlc_full`. 
+
+## Set up and coarse-pruning
+
+* First please go to the working directory and setup environment:    
+`$ cd $REPO/synthlc_full`   
+`$ ./setup_scripts_ift.sh`
+ 
+* coarse-pruning: 
+`$ python3 src/pruning_ufsm.py`  
+This step will generate and evaluate properties that may take a total of 3 hours or so. The results soundly pruning properties that explore operands of candidate transmitters such as `rs2` operand of store instructions.
+
 
 ## `DIV*, REM*` group/megacolumn:  
 Now let us first deploy SynthLC with `DIV*:DIV, DIVU, DIVUW, DIVW` and `REM*: REM, REMU, REMUW, REMW` as our IUVs:   

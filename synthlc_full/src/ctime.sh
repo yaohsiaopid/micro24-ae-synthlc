@@ -10,4 +10,4 @@ do
   grep -v "?" ${itm} | grep "mytask" >> ${mypath}/total_time_${bnm}.csv
 done
 cd ${mypath}
-python3 ctime.py ${mypath}/total_time_${bnm}.csv
+python3 src/ctime.py ${mypath}/total_time_${bnm}.csv
