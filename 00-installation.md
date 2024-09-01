@@ -1,6 +1,8 @@
 # Installation 
 
-1. Confirm that JasperGold can be found: `which jc` 
+0. Since the experiment can take a while please do the series of instructions within a tmux or screen session.
+
+1. Confirm that JasperGold can be found: `which jc`. Otherwise `module laod jaspergold`
 
 2. Install Python3 packages using following commands. 
 
